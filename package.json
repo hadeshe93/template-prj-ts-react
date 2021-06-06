@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development --config ./build/webpack.config.js",
     "build": "webpack --mode=production --config ./build/webpack.config.js",
-    "compile": "tsc ./src"
+    "compile": "tsc ./src",
+    "lint": "eslint ./src --ext .js,.jsx,.tsx",
+    "lint:fix": "npm run lint -- --fix"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +16,16 @@
   "devDependencies": {
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^3.2.0",
+    "prettier": "^2.3.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",

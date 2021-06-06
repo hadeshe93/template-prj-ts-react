@@ -4,7 +4,4 @@ import Hello from './components/demo/Hello';
 
 const appContainer = document.querySelector('.app');
 
-ReactDOM.render(
-  <Hello name="TypeScript" />,
-  appContainer
-);
+ReactDOM.render(<Hello name="TypeScript" />, appContainer);
