@@ -7,13 +7,16 @@
     "start": "webpack-dev-server --mode=development --config ./build/webpack.config.js",
     "build": "webpack --mode=production --config ./build/webpack.config.js",
     "compile": "tsc ./src",
-    "lint": "eslint ./src --ext .js,.jsx,.tsx",
+    "lint": "eslint ./ --ext .js,.jsx,.tsx",
     "lint:fix": "npm run lint -- --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.4",
+    "@babel/preset-env": "^7.14.4",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
@@ -34,6 +37,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "antd": "^4.16.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
