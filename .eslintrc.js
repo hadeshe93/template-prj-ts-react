@@ -20,7 +20,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['**/*.ts', '**/*.tsx'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         ecmaFeatures: {
@@ -37,6 +37,8 @@ module.exports = {
       ],
       plugins: ['react', '@typescript-eslint'],
       rules: {
+        'react/display-name': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
       },
     },
