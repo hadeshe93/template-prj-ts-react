@@ -8,7 +8,7 @@ module.exports = {
     filename: '[name].[chunkhash:8].js',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', 'jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
