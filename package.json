@@ -39,6 +39,7 @@
     "@typescript-eslint/parser": "^4.26.0",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.0",
+    "css-loader": "^5.2.6",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -46,7 +47,10 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
+    "less-loader": "^9.0.0",
     "prettier": "^2.3.1",
+    "style-loader": "^2.0.0",
+    "ts-import-plugin": "^1.6.7",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
@@ -55,11 +59,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "antd": "^4.16.1",
-=======
     "antd": "^4.16.2",
->>>>>>> 0014e355359da67785a083f4852e751d4da49a14
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.2.0"

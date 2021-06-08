@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const tsImportPluginFactory = require('ts-import-plugin')
 
 module.exports = {
   entry: {
@@ -14,12 +15,42 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/i,
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+          getCustomTransformers: () => ({
+            before: [ tsImportPluginFactory({ libraryName: 'antd' }) ]
+          }),
+          compilerOptions: {
+            module: 'es2015'
+          }
+        },
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.less$/,
         use: [
           {
-            loader: 'ts-loader',
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                // 如果使用less-loader@5，请移除 lessOptions 这一级直接配置选项
+                // lessOptions 的配置写法在 less-loader@6.0.0 开始支持。
+                modifyVars: {
+                  'primary-color': '#1DA57A',
+                  'link-color': '#1DA57A',
+                },
+                javascriptEnabled: true,
+              },
+            },
           },
         ],
-        exclude: /node_modules/,
       },
     ],
   },
