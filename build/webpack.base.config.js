@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const tsImportPluginFactory = require('ts-import-plugin')
+const tsImportPluginFactory = require('ts-import-plugin');
+// const { getThemeVariables } = require('antd/dist/theme');
 
 module.exports = {
   entry: {
@@ -19,11 +20,11 @@ module.exports = {
         options: {
           transpileOnly: true,
           getCustomTransformers: () => ({
-            before: [ tsImportPluginFactory({ libraryName: 'antd' }) ]
+            before: [tsImportPluginFactory({ libraryName: 'antd' })],
           }),
           compilerOptions: {
-            module: 'es2015'
-          }
+            module: 'es2015',
+          },
         },
         exclude: /node_modules/,
       },
@@ -42,10 +43,10 @@ module.exports = {
               lessOptions: {
                 // 如果使用less-loader@5，请移除 lessOptions 这一级直接配置选项
                 // lessOptions 的配置写法在 less-loader@6.0.0 开始支持。
-                modifyVars: {
-                  'primary-color': '#1DA57A',
-                  'link-color': '#1DA57A',
-                },
+                // modifyVars: getThemeVariables({
+                //   dark: true, // 开启暗黑模式
+                //   compact: true, // 开启紧凑模式
+                // }),
                 javascriptEnabled: true,
               },
             },
