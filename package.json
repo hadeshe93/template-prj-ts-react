@@ -16,12 +16,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint ./ --ext .js,.jsx,.tsx --fix",
-      "git add"
-    ],
     "*.(js|jsx|ts|tsx)": [
-      "eslint ./ --ext .js,.jsx,.tsx --fix",
+      "eslint --fix",
       "git add"
     ]
   },
@@ -45,6 +41,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.3.8",
     "less": "^4.1.1",

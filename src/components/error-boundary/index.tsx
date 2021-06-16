@@ -32,7 +32,8 @@ export default class ErrorBoundary extends React.Component {
   static getDerivedStateFromError(error) {
     // 返回一个对象以更新 state 中对应的数据
     return {
-      isErrOccurred: true,
+      error,
+      isErrOccurred: Boolean(error),
     };
   }
 }

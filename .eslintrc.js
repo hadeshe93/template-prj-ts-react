@@ -1,11 +1,23 @@
+const commonExtends = ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'];
+const commonPlugins = ['react', 'react-hooks'];
+const commonRules = {
+  'react/display-name': 'off',
+  'react/prop-types': 'off',
+  // 检查 Hook 的规则
+  'react-hooks/rules-of-hooks': 'error',
+  // 检查 effect 的依赖
+  'react-hooks/exhaustive-deps': 'warn',
+};
+
 module.exports = {
   env: {
     browser: true,
     node: true,
   },
   parser: '@babel/eslint-parser',
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
-  plugins: ['react'],
+  extends: [...commonExtends],
+  plugins: [...commonPlugins],
+  rules: { ...commonRules },
   settings: {
     react: {
       version: 'detect',
@@ -22,16 +34,10 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: 'module',
       },
-      extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended',
-      ],
-      plugins: ['react', '@typescript-eslint'],
+      extends: [...commonExtends, 'plugin:@typescript-eslint/recommended'],
+      plugins: [...commonPlugins, '@typescript-eslint'],
       rules: {
-        'react/display-name': 'off',
-        'react/prop-types': 'off',
+        ...commonRules,
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
       },
